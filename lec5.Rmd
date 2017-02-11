@@ -1,0 +1,40 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+#colourbrewer
+```{r}
+x=c(12,4,21,17,13,9)
+barplot(x)
+
+```
+
+```{r}
+#colorbrewer installation
+
+```
+
+```{r}
+require("RColorBrewer")
+display.brewer.all()
+```
+
+```{r}
+display.brewer.pal(8,"Accent")
+```
+
+```{r}
+blues<-brewer.pal(6,"Blues")
+barplot(x,col=blues)
+barplot(x,col=brewer.pal(6,"Greens"))
+barplot(x,col=brewer.pal(6,"Set3"))
+
+
+```
+#Cleanup 
+```{r}
+palette("default") # return to default 
+detach("package:RColorBrewer",unload=TRUE)
+rm(list=ls())
+```
+

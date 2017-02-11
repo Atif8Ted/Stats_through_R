@@ -1,0 +1,62 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+# lect 4
+```{r}
+x=c(12,4,21,17,13,9)
+barplot(x)
+
+```
+
+```{r}
+colors()
+```
+
+```{r}
+barplot(x,col="slategray3")
+
+```
+
+```{r}
+barplot(x,col=colors()[102])
+barplot(x,col=colors()[602])
+
+
+```
+
+```{r}
+col2rgb("yellow") #converts colours to colour code
+```
+
+```{r}
+barplot(x,col=rgb(255,255,0 ,max=255))
+```
+
+```{r}
+#hexcodes
+barplot(x,col="#FFEBCD")
+```
+
+```{r}
+#multiple colours
+barplot(x,col=c("red","blue"))
+barplot(x,col=c("red","blue","green","yellow"))
+```
+
+```{r}
+#using color palletes
+palette()
+barplot(x,col=1:6)
+barplot(x,col=rainbow(6))
+barplot(x,col=heat.colors(6))
+barplot(x,col=terrain.colors(6))
+barplot(x,col=topo.colors(6))
+barplot(x,col=cm.colors(6))
+
+
+
+
+
+```
+

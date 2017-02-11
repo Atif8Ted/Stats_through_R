@@ -1,0 +1,29 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+```{r}
+trends.txt<-read.table("GoogleTrends.txt",header=TRUE)
+```
+
+```{r}
+trends.txt<-read.table("GoogleTrends.txt",header=TRUE,sep="\t")
+trends.txt
+str(trends.txt)
+```
+```{r}
+View(trends.txt) # opens the  dataset in 
+```
+
+```{r}
+#CSV Files
+trends.csv<-read.csv("GoogleTrends.csv")
+trends.csv
+
+```
+
+```{r}
+View(trends.csv)
+```
+
+
