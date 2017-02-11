@@ -1,0 +1,58 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+# Creating  Color Paletes
+```{r}
+#show 5 different categories
+n<-5
+x<-c(rep(10,n))
+barplot(x,col=rainbow(n))
+
+```
+
+```{r}
+#show 8 sequential values
+n<-8
+x<-c(rep(10,n))
+barplot(x,col=heat.colors(n))
+
+```
+
+```{r}
+#11 divergant values
+n<-11
+x<-c(rep(10,n))
+barplot(x,col=cm.colors(n))
+```
+
+```{r}
+#using RColorBrewer
+require("RColorBrewer")
+display.brewer.all()
+```
+
+```{r}
+# show 7 different categories using brewer
+n<-7 
+x<-c(rep(10,n))
+barplot(x,col=brewer.pal(n,"Set1"))
+display.brewer.pal(n,"Set1")
+```
+
+```{r}
+# show 6 sequential categories using brewer
+n<-6
+x<-c(rep(10,n))
+barplot(x,col=brewer.pal(n,"BuPu"))
+display.brewer.pal(n,"BuPu")
+```
+```{r}
+# show 9 divergent values using brewer
+n<-9
+x<-c(rep(10,n))
+barplot(x,col=brewer.pal(n,"PRGn"))
+display.brewer.pal(n,"PRGn")
+```
+```
+
