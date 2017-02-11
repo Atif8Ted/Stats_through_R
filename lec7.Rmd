@@ -1,0 +1,53 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Creating bar charts for a categorical variable 
+```{r}
+#Load dataset
+require("datasets")
+chickwts
+data("chickwts")
+```
+
+```{r}
+plot(chickwts$feed)
+```
+
+```{r}
+feeds<-table(chickwts$feed)
+feeds
+barplot(feeds)
+```
+
+```{r}
+?barplot
+# to put bars in descending order
+barplot(feeds[order(feeds,decreasing = TRUE)])  # decreasing
+barplot(feeds[order(feeds,decreasing = FALSE)])  #increasing
+
+```
+# customize the chart 
+```{r}
+#par function for barplot
+#oma=outside margin
+par(oma=c(1,1,1,1)) #sets outside margins:b,l,t,r
+par(mar=c(4,5,2,1)) #sets plots margins
+```
+
+```{r}
+barplot(feeds[order(feeds)],
+        horiz=TRUE,
+        las=1, # gives orientation at axis level .
+        col=c("beige","blanchedalmond","bisque1","bisque2","bisque3","bisque4"),
+        border=NA,#No borders on bars 
+        main="Frequencies of different feeds \nin chickwts Datasets", #\n =line break
+        xlab ="Number of Chicks ")
+```
+
+```{r}
+#cleanup 
+rm(list=ls())
+```
+
