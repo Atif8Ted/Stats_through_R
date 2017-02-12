@@ -1,0 +1,63 @@
+---
+title: "R Notebook"
+output:
+  pdf_document: default
+  html_notebook: default
+  html_document: default
+---
+#Boxplot for quantative variables
+
+```{r}
+# Load datasets
+require("datasets")
+data(USJudgeRatings)
+```
+
+```{r}
+#make boxplot
+boxplot(USJudgeRatings$RTEN)
+```
+
+```{r}
+#Modify boxplot
+boxplot(USJudgeRatings$RTEN,
+        horizontal = TRUE, #
+        las=1 , #make all labels horizontal
+        notch=TRUE, #Notches for CI for median 
+        ylim =c(0,10) , # Specify range on Y axis 
+        xlab="Lawyers' Ratings ",
+        col="slategray3",
+        boxwex=0.5 ,# Width of box as proportion of original 
+        whisklty=1, #whisker line type; 1=solid line
+        staplelty=0, #staple line at end ; 0=none
+        #changing symbols for outliers 
+        outpch=16,
+        #changing outlier color
+        outcol="Red"
+        )
+
+```
+```{r}
+#plotting boxplot for all variable 
+boxplot(USJudgeRatings,
+        horizontal = TRUE, #
+        las=1 , #make all labels horizontal
+        notch=TRUE, #Notches for CI for median 
+        ylim =c(0,10) , # Specify range on Y axis 
+        xlab="Lawyers' Ratings ",
+        col="slategray3",
+        boxwex=0.5 ,# Width of box as proportion of original 
+        whisklty=1, #whisker line type; 1=solid line
+        staplelty=0, #staple line at end ; 0=none
+        #changing symbols for outliers 
+        outpch=16,
+        #changing outlier color
+        outcol="Red"
+        )
+```
+
+```{r}
+#Cleanup
+rm(list=ls())
+```
+
