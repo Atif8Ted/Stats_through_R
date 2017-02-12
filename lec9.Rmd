@@ -1,0 +1,44 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Creating Histogram for quantitative variables
+```{r}
+#Load Datasets
+require("datasets")
+data("lynx")
+hist(lynx)
+```
+
+```{r}
+h<-hist(lynx,
+        breaks = 11,
+        freq=FALSE, #if freq=FALSE ,this will draw normal distribution  , i.e density .
+        col="thistle1",
+        main = "Histogram of Annual Canadian Lynx Trappings \n1821-1934",
+        xlab="Number of Lynx Trapped"
+        )
+```
+
+```{r}
+h<-hist(lynx,
+        breaks = 11,
+        freq=FALSE, #if freq=FALSE ,this will draw normal distribution  , i.e density .
+        col="thistle1",
+        main = "Histogram of Annual Canadian Lynx Trappings \n1821-1934",
+        xlab="Number of Lynx Trapped"
+        )
+curve(dnorm(x,mean=mean(lynx),sd=sd(lynx)),
+      col="thistle4",
+      lwd=2,
+      add=TRUE)
+?curve
+
+```
+
+```{r}
+#cleanup
+rm(list=ls())
+```
+
